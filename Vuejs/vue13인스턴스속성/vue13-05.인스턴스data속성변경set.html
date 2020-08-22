@@ -70,3 +70,32 @@
 </html>
 
 <!-- vue 스크립트 플러그인 임포트 -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"> /* vue 플러그인 임포트 */</script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            arr: [1, 2, 3, 4, 5]
+        },
+        methods: {
+            change1: function (e) {
+                console.log("change1");
+                Vue.set(this.$data.arr, 0, 100);
+            },
+            change2: function (e) {
+                console.log("change2");
+                this.$set(this.arr, 1, 300);
+            },
+            change3: function (e) {
+                console.log("change3");
+                this.arr.splice(0, 2, 500);
+            },
+            change4: function (e) {
+                console.log("change4");
+                // Vue.set(this.$data.arr, this.$data.arr.length, 70);
+                this.$set(this.arr, this.arr.length, 70);
+                // var arr_copy = [...this.arr, 70];
+            }
+        }
+    });
+</script>

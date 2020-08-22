@@ -39,13 +39,30 @@
 
     <div id="app">
         {{ message }}
+        <div>{{ test }}</div>
     </div>
 
     <div id="app2">
         {{ message }}
+        <div>{{ test }}</div>
     </div>
 </body>
 
 </html>
 
 <!-- vue 스크립트 플러그인 임포트 -->
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"> /* vue 플러그인 임포트 */</script>
+<script>
+    var model = {
+        message: "Hello, Vue.js",
+        test: "hihi"
+    }
+    var vm1 = new Vue({
+        el: "#app",
+        data: model
+    });
+    var vm2 = new Vue({
+        el: "#app2",
+        data: model
+    });
+</script>
